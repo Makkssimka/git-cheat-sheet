@@ -61,3 +61,12 @@ git push
 **tracked** - _отслеживаемый_, все файлы, которые были зафиксированны через `git commit` и добавлены через `git add`.
 
 **modified** - _измененный_, файл, который был изменен по отношению к последней сохраненной версии.
+
+```mermaid
+flowchart TD
+    A(untraked) -->|git add| B(staged + tracked)
+    B -->|git commit| C(tracked)
+    B -->|изменения| D(modified)
+    D -->|git add| B
+    C -->|изменения| D
+```
